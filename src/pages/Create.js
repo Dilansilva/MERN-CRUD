@@ -15,7 +15,7 @@ const Create = () => {
     const onClickSubmit = (e) => {  
         e.preventDefault();//disable the page reload
         //fetch here
-        console.log('Hbjb');
+        
     }
 
     return(
@@ -29,6 +29,7 @@ const Create = () => {
                         type="text" 
                         placeholder="Heading"
                         onChange={(e) => {setHeading(e.target.value)}}
+                        
                     />
             </Form.Group>
 
