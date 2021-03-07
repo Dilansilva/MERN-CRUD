@@ -1,10 +1,7 @@
 import React from 'react';
 
-import {Button,//import bootstrap
-        Form,
-        Nav,
-        Navbar,
-        FormControl} from 'react-bootstrap';
+import {//import bootstrap
+        Navbar} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const NavigationBar = () => {
