@@ -1,7 +1,9 @@
+import Create from './pages/Create';//import create page
+
 function App() {
   return (
     <div>
-      <h1>Hello World</h1>
+      <Create/>
     </div>
   );
 }
