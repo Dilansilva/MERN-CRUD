@@ -1,19 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import {Button,//import bootstrap
-        Card,
+import {//import bootstrap
         Jumbotron} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import NavigationBar from '../components/NavigationBar';//import navigation bar
-
-const Cards = () => {
+const Cards = (props) => {
     return(
         <div className="nav justify-content-center">
-                    <p>bjbjb</p>
-                    <p>bjbjb</p>
-                    <p>bjbjb</p>
-                    <h1>ugjbj</h1>
-               </div>
+            <Jumbotron>
+                <h2>{props.header}</h2>
+                    <p>{props.body}</p>
+            </Jumbotron>     
+        </div>
     );
 }
+
+export default Cards;

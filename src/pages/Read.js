@@ -12,7 +12,14 @@ const Read = () => {
     return(
         <>
             <NavigationBar/>
-               <Card/>
+               <Cards
+                    header="This is from header one"
+                    body="sample bodydddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+               />
+               <Cards
+                    header="This is from header two"
+                    body="sample body 2dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+               />
         </>
     );
 }
