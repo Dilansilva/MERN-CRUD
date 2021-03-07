@@ -6,15 +6,14 @@ import {Button,//import bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import NavigationBar from '../components/NavigationBar';//import navigation bar
-import Cards from '../components/Cards';//impotr card component
 
-const Read = () => {
+const Cards = () => {
     return(
-        <>
-            <NavigationBar/>
-               <Card/>
-        </>
+        <div className="nav justify-content-center">
+                    <p>bjbjb</p>
+                    <p>bjbjb</p>
+                    <p>bjbjb</p>
+                    <h1>ugjbj</h1>
+               </div>
     );
 }
-
-export default Read;
