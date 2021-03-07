@@ -12,6 +12,11 @@ const Create = () => {
     const [headings,setHeading] = useState('');//state for article heading
     const [body,setBody] = useState('');//state for article body
 
+    const onClickSubmit = (e) => {  
+        e.preventDefault();//disable the page reload
+        //fetch here
+        console.log('Hbjb');
+    }
 
     return(
         <>
@@ -28,7 +33,7 @@ const Create = () => {
             </Form.Group>
 
             <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Example textarea</Form.Label>
+                <Form.Label>Enter Article Body</Form.Label>
                     <Form.Control 
                         placeholder="Article Body is here" 
                         as="textarea" rows={11} 
@@ -36,7 +41,11 @@ const Create = () => {
                     />
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Button 
+                variant="primary" 
+                type="submit"
+                onClick={onClickSubmit}
+            >
                 Add Article
             </Button>
         </Form>
