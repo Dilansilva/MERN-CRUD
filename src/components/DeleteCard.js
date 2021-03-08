@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import {//import bootstrap
     Jumbotron,
-    Form,
     Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

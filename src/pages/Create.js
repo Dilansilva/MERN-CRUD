@@ -11,21 +11,25 @@ const axios = require('axios');//import axios
 
 const Create = () => {
 
-    const [headings,setHeading] = useState('');//state for article heading
+    const [heading,setHeading] = useState('');//state for article heading
     const [body,setBody] = useState('');//state for article body
 
     const onClickSubmit = (e) => {  
         e.preventDefault();//disable the page reload
-        axios.post('/create', {
-            heading: headings,
-            body : body
-          })
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+        
+          axios({
+            headers: { 
+                'content-type': 'application/json'
+            },
+            method: 'post',
+            url: `http://localhost:4000/create`,
+            params: {
+                heading : heading,
+                body : body
+            }
+        })
+        .then((response) => response.data)
+        .catch((error) => error);
     }
 
     return(
