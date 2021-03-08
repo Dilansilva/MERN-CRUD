@@ -13,6 +13,11 @@ export default class Update extends Component {
             }
         ];
       }
+
+      handleClick = () => {
+        console.log('Hello Worls');
+      }
+
     render() {
         return (
             <div>
@@ -22,7 +27,7 @@ export default class Update extends Component {
                             <UpdateCard
                                 defaultValueHeader={data.title}
                                 defaultValueBody={data.body}
-                                
+                                onclick={this.props.handleClick}
                             />
                         )
                     })

@@ -11,7 +11,10 @@ export default class Delete extends Component {
     render() {
         return (
             <div>
-                <DeleteCard/>
+                <DeleteCard
+                    heading="knkn"
+                    body="knknk"
+                />
             </div>
         )
     }

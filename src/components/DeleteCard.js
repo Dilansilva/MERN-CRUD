@@ -1,11 +1,23 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
+import {//import bootstrap
+    Jumbotron,
+    Form,
+    Button} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class DeleteCard extends Component {
     render() {
         return (
-            <div>
-                <h1>jbjbj</h1>
-            </div>
+           <Jumbotron>
+                <h1>{this.props.heading}</h1>
+                    <p>
+                        {this.props.body}
+                    </p>
+           <p>
+             <Button variant="primary">Delete</Button>
+           </p>
+           </Jumbotron>
         )
     }
 }
