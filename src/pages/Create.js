@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import NavigationBar from '../components/NavigationBar';//import navigation bar
 
+const axios = require('axios');//import axios
+
 const Create = () => {
 
     const [headings,setHeading] = useState('');//state for article heading
@@ -14,7 +16,16 @@ const Create = () => {
 
     const onClickSubmit = (e) => {  
         e.preventDefault();//disable the page reload
-        
+        axios.post('/create', {
+            heading: headings,
+            body : body
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }
 
     return(
