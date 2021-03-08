@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react'
 
 export class UpdateCard extends Component {
-    render(props) {
+    render() {
         return (
             <Jumbotron>
                 <Form>
