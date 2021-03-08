@@ -1,12 +1,15 @@
 import React, { useState,useEffect } from 'react';
 
 import NavigationBar from '../components/NavigationBar';//import navigation bar
-import Cards from '../components/Cards';//impotr card component
+import UpdateCard from '../components/UpdateCard';//import component for update
 
 const Update = () => {
     return(
         <div>
-            <h1>Update page</h1>
+            <NavigationBar/>
+            <UpdateCard
+                
+            />
         </div>
     );
 }
