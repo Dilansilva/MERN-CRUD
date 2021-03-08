@@ -8,6 +8,7 @@ const Read = () => {
         header: 'Dilan',
         body: 'This is a sample body'
    })//state for article
+   
    useEffect(() => {
         //fetch api here
    },[]);

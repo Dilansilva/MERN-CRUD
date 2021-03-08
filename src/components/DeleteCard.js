@@ -14,9 +14,12 @@ export default class DeleteCard extends Component {
                     <p>
                         {this.props.body}
                     </p>
-           <p>
-             <Button variant="primary">Delete</Button>
-           </p>
+            <p>
+                <Button 
+                    variant="primary"
+                    onClick={this.props.click}
+                >Delete</Button>
+            </p>
            </Jumbotron>
         )
     }

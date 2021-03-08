@@ -14,7 +14,6 @@ const Create = () => {
 
     const onClickSubmit = (e) => {  
         e.preventDefault();//disable the page reload
-        //fetch here
         
     }
 
