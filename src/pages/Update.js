@@ -10,30 +10,6 @@ export default class Update extends Component {
             {
                 title : 'njnknkk',
                 body : 'knknkn'
-            },
-            {
-                title : 'njnknkk',
-                body : 'knknkn'
-            },
-            {
-                title : 'njnknkk',
-                body : 'knknkn'
-            },
-            {
-                title : 'njnknkk',
-                body : 'knknkn'
-            },
-            {
-                title : 'njnknkk',
-                body : 'knknkn'
-            },
-            {
-                title : 'njnknkk',
-                body : 'knknkn'
-            },
-            {
-                title : 'njnknkk',
-                body : 'knknkn'
             }
         ];
       }
@@ -46,6 +22,7 @@ export default class Update extends Component {
                             <UpdateCard
                                 defaultValueHeader={data.title}
                                 defaultValueBody={data.body}
+                                
                             />
                         )
                     })
