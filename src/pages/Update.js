@@ -8,6 +8,8 @@ const Update = () => {
         <div>
             <NavigationBar/>
             <UpdateCard
+                defaultValueHeader="knknk"
+                defaultValueBody="jknknkn"
                 
             />
         </div>

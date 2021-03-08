@@ -15,14 +15,14 @@ export class UpdateCard extends Component {
                         <Form.Label>Article Header</Form.Label>
                             <Form.Control 
                                 type="text" 
-                                defaultValue={this.props.defaultValue}
+                                defaultValue={this.props.defaultValueHeader}
                             />
 
                                 <Form.Label>Article Body</Form.Label>
                                     <Form.Control 
                                         as="textarea" 
                                         rows={3} 
-                                        defaultValue={this.props.defaultValue}
+                                        defaultValue={this.props.defaultValueBody}
                                     />
                     </Form.Group>
 
