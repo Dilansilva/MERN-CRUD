@@ -12,6 +12,9 @@ const Create = () => {
     const [heading,setHeading] = useState('');//state for article heading
     const [body,setBody] = useState('');//state for article body
 
+    const [defaulttitle,setDefaulttitle] = useState('');//state for default title value
+    const [defaultbody,setDefaultbody] = useState('');//state for default body value
+
     const onClickSubmit = (e) => {  
         e.preventDefault();//disable the page reload
      
@@ -29,10 +32,10 @@ const Create = () => {
             })
         }).then(response => response.json())
         .then((responseJson) => {
-            console.log(responseJson);
+            console.log(JSON.stringify(responseJson));
         })
         .catch((error) => {
-            console.log('Error');
+            console.log(error);
         })
         
     }
