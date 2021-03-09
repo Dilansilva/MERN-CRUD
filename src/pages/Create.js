@@ -12,9 +12,6 @@ const Create = () => {
     const [heading,setHeading] = useState('');//state for article heading
     const [body,setBody] = useState('');//state for article body
 
-    const [defaulttitle,setDefaulttitle] = useState('');//state for default title value
-    const [defaultbody,setDefaultbody] = useState('');//state for default body value
-
     const onClickSubmit = (e) => {  
         e.preventDefault();//disable the page reload
      
@@ -32,10 +29,10 @@ const Create = () => {
             })
         }).then(response => response.json())
         .then((responseJson) => {
-            console.log(JSON.stringify(responseJson));
+            console.log(responseJson);
         })
         .catch((error) => {
-            console.log(error);
+           console.log(error);
         })
         
     }
@@ -51,7 +48,7 @@ const Create = () => {
                         type="text" 
                         placeholder="Heading"
                         onChange={(e) => {setHeading(e.target.value)}}
-                        defaultValue=""
+                        //defau={defaulttitle}
                     />
             </Form.Group>
 
@@ -61,6 +58,7 @@ const Create = () => {
                         placeholder="Article Body is here" 
                         as="textarea" rows={11} 
                         onChange={(e) => {setBody(e.target.value)}}
+                        //value={defaultbody}
                     />
             </Form.Group>
 
