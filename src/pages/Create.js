@@ -13,6 +13,7 @@ const Create = () => {
     const [body,setBody] = useState('');//state for article body
 
     const onClickSubmit = (e) => {  
+
         e.preventDefault();//disable the page reload
      
         fetch('http://localhost:4000/create',{
@@ -34,11 +35,10 @@ const Create = () => {
         .catch((error) => {
            console.log(error);
         })
-        
     }
 
     return(
-        <>
+    <>
             <NavigationBar/>
         <Jumbotron>
         <Form>
@@ -70,8 +70,8 @@ const Create = () => {
                 Add Article
             </Button>
         </Form>
-    </Jumbotron>
-        </>
+        </Jumbotron>
+    </>
     );
 }
 

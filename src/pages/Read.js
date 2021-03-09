@@ -6,16 +6,14 @@ import Cards from '../components/Cards';//impotr card component
 import axios from 'axios';
 
 const Read = () => {
-   const [article,setArticle] = useState({
-        header: 'Dilan',
-        body: 'This is a sample body'
-   })//state for article
+
+   const [article,setArticle] = useState({})//state for article
    
    useEffect(() => {
      axios.get('http://localhost:4000/read')
      .then(function (response) {
-       // handle success
-       console.log(response);
+       // handle succes
+       setArticle(response.data);
      })
      .catch(function (error) {
        // handle error
@@ -29,15 +27,18 @@ const Read = () => {
     return(
         <>
             <NavigationBar/>
-               <Cards
-                    header="This is from header one"
-                    body="sample bodydddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
-               />
-               <Cards
-                    header="This is from header two"
-                    body="sample body 2dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
-               />
-               
+         
+               {
+                article.map((data) => {
+                       return(
+                        <Cards
+                          key={data._id}
+                          header={data.article_heading}
+                          body={data.article_body}
+                        />
+                      );
+                 })
+                }
         </>
     );
 }
