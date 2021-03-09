@@ -7,8 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import NavigationBar from '../components/NavigationBar';//import navigation bar
 
-const axios = require('axios');//import axios
-
 const Create = () => {
 
     const [heading,setHeading] = useState('');//state for article heading
@@ -16,20 +14,26 @@ const Create = () => {
 
     const onClickSubmit = (e) => {  
         e.preventDefault();//disable the page reload
-        
-          axios({
-            headers: { 
-                'content-type': 'application/json'
+     
+        fetch('http://localhost:4000/create',{
+            method : 'POST',
+            mode : 'cors',
+            headers: {
+                Accept : 'application/json',
+                'Content-Type' : 'application/json',
+                'Access-Control-Allow-Origin' : 'http://localhost:4000/create'
             },
-            method: 'post',
-            url: `http://localhost:4000/create`,
-            params: {
-                heading : heading,
-                body : body
-            }
+            body : JSON.stringify({
+               heading,
+               body
+            })
+        }).then(response => response.json())
+        .then((responseJson) => {
+            console.log(responseJson);
         })
-        .then((response) => response.data)
-        .catch((error) => error);
+        .catch((error) => {
+            console.log('Error');
+        })
         
     }
 
@@ -44,7 +48,7 @@ const Create = () => {
                         type="text" 
                         placeholder="Heading"
                         onChange={(e) => {setHeading(e.target.value)}}
-                        
+                        defaultValue=""
                     />
             </Form.Group>
 
