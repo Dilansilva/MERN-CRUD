@@ -15,6 +15,8 @@ const Create = () => {
     const [addMessage, setAddmessage] = useState('');//state for article added success
     const [error,setError] = useState('');//state for error message 
 
+    
+
     const onClickSubmit = (e) => {  
 
         e.preventDefault();//disable the page reload
@@ -33,7 +35,7 @@ const Create = () => {
             })
         }).then(response => response.json())
         .then((data) => {
-            if(data.message == 'created'){
+            if(data.message == ' '){
                 setAddmessage('Successfully Created the Article');
             } else if(data.message == 'unable to create'){
                 setAddmessage('Unable to create the article');
@@ -55,7 +57,7 @@ const Create = () => {
                         type="text" 
                         placeholder="Heading"
                         onChange={(e) => {setHeading(e.target.value)}}
-                        //defau={defaulttitle}
+                        
                     />
                     <small>{addMessage}</small>
                     <small>{error}</small>
@@ -67,7 +69,7 @@ const Create = () => {
                         placeholder="Article Body is here" 
                         as="textarea" rows={11} 
                         onChange={(e) => {setBody(e.target.value)}}
-                        //value={defaultbody}
+                        
                     />
             </Form.Group>
 
