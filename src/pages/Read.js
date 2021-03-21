@@ -8,7 +8,8 @@ import axios from 'axios';
 const Read = () => {
 
    const [article,setArticle] = useState({})//state for article
-   
+   const [error,setError] = useState();//state for error message
+
    useEffect(() => {
      axios.get('http://localhost:4000/read')
      .then(function (response) {
@@ -18,6 +19,7 @@ const Read = () => {
      .catch(function (error) {
        // handle error
        console.log(error);
+       setError('Internal Server Error');
      })
      .then(function () {
        // always executed
@@ -27,17 +29,18 @@ const Read = () => {
     return(
         <>
             <NavigationBar/>
-         
+           
+          <p>{error}</p>
                {
-                article.map((data) => {
-                       return(
-                        <Cards
-                          key={data._id}
-                          header={data.article_heading}
-                          body={data.article_body}
-                        />
-                      );
-                 })
+                // article.map((data) => (
+                       
+                //         <Cards
+                //           key={data._id}
+                //           header={data.article_heading}
+                //           body={data.article_body}
+                //         />
+                    
+                // ))
                 }
         </>
     );

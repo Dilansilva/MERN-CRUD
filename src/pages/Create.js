@@ -12,10 +12,13 @@ const Create = () => {
     const [heading,setHeading] = useState('');//state for article heading
     const [body,setBody] = useState('');//state for article body
 
+    const [addMessage, setAddmessage] = useState('');//state for article added success
+    const [error,setError] = useState('');//state for error message 
+
     const onClickSubmit = (e) => {  
 
         e.preventDefault();//disable the page reload
-     
+        
         fetch('http://localhost:4000/create',{
             method : 'POST',
             mode : 'cors',
@@ -29,11 +32,15 @@ const Create = () => {
                body
             })
         }).then(response => response.json())
-        .then((responseJson) => {
-            console.log(responseJson);
+        .then((data) => {
+            if(data.message == 'created'){
+                setAddmessage('Successfully Created the Article');
+            } else if(data.message == 'unable to create'){
+                setAddmessage('Unable to create the article');
+            }
         })
         .catch((error) => {
-           console.log(error);
+           setError('Internal Error');
         })
     }
 
@@ -50,6 +57,8 @@ const Create = () => {
                         onChange={(e) => {setHeading(e.target.value)}}
                         //defau={defaulttitle}
                     />
+                    <small>{addMessage}</small>
+                    <small>{error}</small>
             </Form.Group>
 
             <Form.Group controlId="exampleForm.ControlTextarea1">

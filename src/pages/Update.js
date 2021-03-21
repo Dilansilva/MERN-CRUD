@@ -8,8 +8,6 @@ export default class Update extends Component {
         super(props);
         this.state = [
             {
-                title : 'njnknkk',
-                body : 'knknkn'
             }
         ];
       }
