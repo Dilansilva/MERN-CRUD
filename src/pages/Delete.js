@@ -6,7 +6,7 @@ export default class Delete extends Component {
     constructor(props){
         super(props);
         this.state = [
-
+            
         ];
     }
     render() {
@@ -16,7 +16,10 @@ export default class Delete extends Component {
                 <DeleteCard
                     heading="knkn"
                     body="knknk"
-                    // click={}
+                />
+                <DeleteCard
+                    heading="This is a header"
+                    body="This is a kkn"
                 />
                 
             </>
